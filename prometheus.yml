@@ -1,0 +1,17 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'fast-food-api'
+    static_configs:
+      - targets: ['host.docker.internal:5000']
+      
+  - job_name: 'grpc-food-api'
+    static_configs:
+      - targets: ['host.docker.internal:5001']
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+        labels:
+          machine: 'Bilal-Laptop'

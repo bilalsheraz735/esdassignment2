@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+orders.db
+orders.db-wal
+orders.db-shm
+app-logs.json

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package fastfood;
+
+// The gRPC Service definition
+service OrderService {
+    // Unary RPC: Sends one request, gets one response
+    rpc PlaceOrder (OrderRequest) returns (OrderResponse) {}
+}
+
+// The incoming data (matches what our HTTP API expects)
+message OrderRequest {
+    string idempotency_key = 1;
+}
+
+// The outgoing data (matches what our HTTP API returns)
+message OrderResponse {
+    string status = 1;
+    string order_id = 2;
+}
